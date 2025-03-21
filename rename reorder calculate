@@ -1,0 +1,4 @@
+Formula 
+UnitPrice = Number.Round (Number.RandomBetween(50, 500))
+
+Order_Details = [UnitPrice]*[Quantity]
