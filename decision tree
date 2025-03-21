@@ -1,0 +1,21 @@
+# Load necessary libraries
+library(rpart)
+library(rpart.plot)
+
+# Load dataset (Iris dataset used for classification)
+data(iris)
+
+# Train Decision Tree Model
+model <- rpart(Species ~ ., data = iris, method = "class")
+
+# Print the summary of the model
+print(model)
+
+# Visualize the Decision Tree
+rpart.plot(model, type = 3, extra = 102, fallen.leaves = TRUE, cex = 0.8)
+
+# Predict using the model
+predictions <- predict(model, iris, type = "class")
+
+# Print confusion matrix to check model accuracy
+table(Predicted = predictions, Actual = iris$Species)
